@@ -21,8 +21,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY']='SuperSecretKey'
 app.config['SQLALCHEMY_DATABASE_URI'] = conn
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # silence the deprecation warning
-app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {"pool_pre_ping": True, "pool_recycle": 300,}  # pymysql.err.Operational error warnings https://medium.com/@heyjcmc/controlling-the-flask-sqlalchemy-engine-a0f8fae15b47
-app.config['DEBUG'] = True
+
 db = SQLAlchemy(app)
 
 # Prevent --> pymysql.err.OperationalError) (2006, "MySQL server has gone away (BrokenPipeError(32, 'Broken pipe')
